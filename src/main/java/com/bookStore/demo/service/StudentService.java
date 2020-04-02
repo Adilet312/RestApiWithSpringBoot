@@ -20,6 +20,7 @@ public class StudentService {
     }
     public int insertStudent(UUID id, Student newStudent){
         UUID studentUid = id == null ? UUID.randomUUID() : id;
+        newStudent.setId(id);
         return studentDao.insertStudent(studentUid,newStudent);
 
     }
